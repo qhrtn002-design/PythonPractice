@@ -33,3 +33,5 @@ for i in range(1,a+1):
     for row in arr:
         print(*row) # 전체 배열 출력. 
         # 행단위로 출력 (*row). 해당 row의 모든 요소 출력
+
+        
