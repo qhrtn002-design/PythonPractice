@@ -1,6 +1,6 @@
 a = int(input())
 
-for _ in range(1,a+1):
+for s in range(1,a+1):
     n, m = map(int, input().split())
 
     arr = [] #초기 배열 지정
@@ -8,7 +8,7 @@ for _ in range(1,a+1):
 
     for i in range(n):
         ans = list(map(int, input().split()))
-        arr.append(ans) #줄 반복해서 더하면서 파리 배열 지정
+        arr.append(ans) #줄 반복해서 더하면서 파리 배열 생성
 
     ps = [[0]* n for _ in range(n)] #누적합 배열 생성
     for a in range(n):
@@ -38,4 +38,4 @@ for _ in range(1,a+1):
             if total > kill:
                 kill = total
 
-    print(f'#{_} {kill}')
+    print(f'#{s} {kill}')
