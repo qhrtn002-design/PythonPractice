@@ -3,13 +3,13 @@ t = int(input())
 for s in range(1,t+1):
     num = int(input())
     
-    arr = []
-    for _ in range(num):
-        lst = list(map(int,input().split()))
-        arr.append(lst)
+    arr = [list(map(int,input())) for _ in range(num)]
 
     center = num // 2
+    total = 0 
 
     for i in range(num):
-        for j in range(num):
-            abs(i -center) + abs(j - center)
+        dis = abs(center - i)
+        total += sum(arr[i][dis: num-dis])
+
+    print(f'#{s} {total}')
