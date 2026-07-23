@@ -23,5 +23,5 @@ for s in range(1,t+1):
             y += dy[dir]
 
     print(f'#{s}')
-    for u in arr:
-        print(*u)
+    for row in arr:
+        print(*row)
