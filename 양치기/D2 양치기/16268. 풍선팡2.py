@@ -13,14 +13,12 @@ for s in range(1,t+1):
             total = 0
             total += arr[i][j]
 
-            for x in range(1,arr[i][j]+1):
-                for dx, dy in cross:
+            for dx, dy in cross:
+                nx = i + dx
+                ny = j + dy
 
-                    nx = i + dx*x
-                    ny = j + dy*x
-
-                    if 0<=nx<=n-1 and 0<=ny<=m-1:
-                        total += arr[nx][ny]
+                if 0<=nx<=n-1 and 0<=ny<=m-1:
+                    total += arr[nx][ny]
 
             ans = max(ans,total)
             
