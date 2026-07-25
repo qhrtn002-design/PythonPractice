@@ -1,5 +1,5 @@
-num = int(input())
+t = int(input())
 
-for i in range(1, num+1):
-    s = int(input())
-    print(f'#{i} {s**2}')
+for i in range(1,t+1):
+    n = int(input())
+    print(f'#{i} {n*n}')

@@ -1,5 +1,5 @@
-num = int(input())
+t = int(input())
 
-for i in range(1, num+1):
-    a, b = map(int, input().split())
-    print(f'#{i} {(a+b)%24}')
+for s in range(1,t+1):
+    n, m = map(int,input().split())
+    print(f'#{s} {(n+m)%24}')
