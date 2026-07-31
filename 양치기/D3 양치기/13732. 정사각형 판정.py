@@ -1,21 +1,24 @@
 t = int(input())
 for s in range(1,t+1):
     n = int(input())
-    arr = [list(input())for _ in range(n)]
-
+    arr = [input() for _ in range(n)]
+    point = []
     for i in range(n):
         for j in range(n):
             if arr[i][j] == '#':
-                c1, c2 = i, j
+                point.append((i,j))
+    r1 = min(x[0] for x in point)
+    r2 = max(x[0] for x in point)
+    c1 = min(x[1] for x in point)
+    c2 = max(x[1] for x in point)
+    ans = 'yes'
+    rowsize, colsize = r2-r1+1, c2-c1+1
 
-    for x in range(c1, n):
-        cnt = 0
-        for y in range(c2, n):
-            if arr[c1][c2] == '#':
-                cnt += 1
-        if cnt == (n-j) * (n-i):
-            ans = 'yes'
-        else:
-            ans = 'no'
-
+    if rowsize != colsize:
+        ans = 'no'
+    else:
+        for i in range(r1,r2+1):
+            for j in range(c1, c2+1):
+                if arr[i][j] != '#':
+                    ans = 'no'
     print(f'#{s} {ans}')
