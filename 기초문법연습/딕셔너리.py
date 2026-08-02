@@ -10,3 +10,21 @@ del temp['메로나']
 temp.update(엔초=1800,가르나초=200)
 print(temp)
 
+def count_char_get(chars):
+    ans = {}
+    for i in chars:
+        ans[i] = ans.get(i,0)+1
+    return ans
+
+from collections import defaultdict
+def count_char_default(chars):
+    cnt = defaultdict(int)
+    for i in chars:
+        cnt[i] += 1
+    return dict(cnt)
+
+def group_subjects(subjects):
+    lst = defaultdict(list)
+    for i,j in subjects:
+        lst[i].append(j)
+    return dict(lst)
