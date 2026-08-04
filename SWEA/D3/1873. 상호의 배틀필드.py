@@ -1,22 +1,13 @@
-def moving():
-
-    return
-
-def shooting():
-
-    return
-
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
 t = int(input())
 for s in range(t):
     h, w = map(int,input().split())
     arr = [list(input()) for _ in range(h)]
     n = int(input())
     move = input()
-    for i in move:
-        if i == 'U' and i == 'L' and i == 'R' and i == 'D':
-            moving(i)
-        else:
-            shooting(i)
+    
+
 
     print(f'#{s+1}',end='')
     for row in arr:
