@@ -26,7 +26,6 @@ for s in range(1,a+1):
     for q in range(n-m+1): #파리채 반복 이동
         for p in range(n-m+1):
             total = 0
-
             total = ps[q+m-1][p+m-1] #파리채 범위 오른쪽 하단 누적합 가져오기
             if q>0:
                 total -= ps[q-1][p+m-1] #q가 1이상일때, 위쪽 누적합 빼기
