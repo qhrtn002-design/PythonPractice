@@ -10,7 +10,6 @@ def dupperm(num):
         ans.append(i)
         dupperm(num+1)
         ans.pop()
-dupperm(0)
 
 #중복 조합
 def dupcomb(num, idx):
@@ -21,7 +20,6 @@ def dupcomb(num, idx):
         ans.append(i)
         dupcomb(num+1, i)
         ans.pop()
-dupcomb(0,0)
 
 #조합
 def comb(num, idx):
@@ -32,7 +30,6 @@ def comb(num, idx):
         ans.append(i)
         comb(num+1, i+1)
         ans.pop()
-comb(0,0)
 
 #순열
 visited = [0] * (n+1)
@@ -47,4 +44,3 @@ def perm(num):
             perm(num+1)
             ans.pop()
             visited[i] = 0
-perm(0)

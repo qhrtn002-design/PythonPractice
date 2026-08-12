@@ -13,6 +13,7 @@ for i in range(1,n+1):
     node[i].sort()
     # 작은 번호부터 방문하기 위해 정렬
 
+#DFS
 stack = [v]
 # DFS: 시작 노드를 스택에 넣음
 visited = [False] * (n+1)
@@ -33,6 +34,7 @@ while stack:
             # 다음에 방문할 노드를 스택에 넣음
 print()
 
+#BFS
 queue = deque([v])
 # BFS: 시작 노드를 큐에 넣음
 visited = [False] * (n+1)
