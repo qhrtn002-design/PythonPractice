@@ -1,9 +1,10 @@
-def comb():
-    if num == m:
+def comb(idx, score, cal):
+    if cal > l:
+        print(score)
         return
     for i in range(idx, n):
-        ans.append(i)
-        comb(num+1, i+1)
+        ans.append()
+        comb(idx+1, score+h1, cal+h2)
         ans.pop()
 
 t = int(input())
@@ -12,5 +13,5 @@ for s in range(t):
     for _ in range(n):
         h1, h2 = map(int, input().split())
         ans = []
-        comb()
+        comb(0,0,0)
 
