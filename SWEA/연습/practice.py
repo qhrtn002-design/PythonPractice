@@ -1,24 +1,29 @@
-a = [5,3,2,3,54,6,3,2,1,2,3]
-ans = a[0]
-for i in range(len(a)):
-    if a[i] > ans:
-        ans = a[i]
-        max_val_idx = i
-print(ans)
-print(max_val_idx)
+def comb(idx, total):
+    global cnt
+    if idx == n:
+        if total == k:
+            cnt += 1
+        return
+    if total+lst[idx]<=k:
+        comb(idx+1,total+lst[idx])
+    comb(idx+1,total)
+    
+t = int(input())
+for s in range(t):
+    n,k=map(int,input().split())
+    lst=list(map(int,input().split()))
+    cnt = 0
+    comb(0,0)
+    print(f'#{s+1} {cnt}')
 
 
-#3 a에서 최대 빈도수를 갖는 숫자를 출력하세요.
-cnt = 0
-
-for i in range(len(a)):
-    count = 0
-    for j in range(len(a)):
-        if a[i] == a[j]:
-            count += 1
-
-    if count > cnt:
-        cnt = count
-        answer = a[i]
-
-print(answer)
+t = int(input())
+for s in range(t):
+    n,k=map(int,input().split())
+    lst=list(map(int,input().split()))
+    dp=[0]*(k+1)
+    dp[0]=1
+    for i in lst:
+        for j in range(k,i-1,-1):
+            dp[j] += dp[j-i]
+    print(f'#{s+1} {dp[k]}')
