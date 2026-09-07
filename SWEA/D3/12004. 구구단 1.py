@@ -6,5 +6,4 @@ for s in range(1,t+1):
         for j in range(1,10):
             if n == i*j:
                 ans = 'Yes'
-        
     print(f'#{s} {ans}')

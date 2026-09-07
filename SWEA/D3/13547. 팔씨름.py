@@ -1,5 +1,4 @@
 t = int(input())
-
 for s in range(1,t+1):
     n = input()
     cnt = 0

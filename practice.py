@@ -1,20 +1,17 @@
+def hap(idx,total):
+    global cnt
+    if idx == n:
+        if total == k:
+            cnt +=1
+        return
+    if total+lst[idx]<=k:
+        hap(idx+1, total+lst[idx])
+    hap(idx+1, total)
+
 t=int(input())
 for s in range(t):
-    n=input()
-    lst = []
-    ans = 1
-    for i in n:
-        if i == '(' or i == '{':
-            lst.append(i)
-        elif i==')'or i=='}':
-            if len(lst) == 0:
-                ans = 0
-            elif i=='}' and lst[-1] == '{':
-                lst.pop()
-            elif i==")" and lst[-1] == '(':
-                lst.pop()
-            else:
-                ans = 0
-    if len(lst)!=0:
-        ans=0
-    print(f'#{s+1} {ans}')
+    n,k = map(int,input().split())
+    lst = list(map(int,input().split()))
+    cnt = 0
+    hap(0,0)
+    print(f'#{s+1} {cnt}')

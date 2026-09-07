@@ -6,5 +6,4 @@ for s in range(1, t+1):
         for y in range(-n,n+1):
             if ((x**2)+(y**2))<=n**2: 
                 cnt +=1 #원점 기준으로 면적안에드는 x,y 개수 카운팅
-
     print(f'#{s} {cnt}')

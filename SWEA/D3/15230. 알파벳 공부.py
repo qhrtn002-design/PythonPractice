@@ -1,5 +1,4 @@
 t = int(input())
-
 for s in range(1,t+1):
     n = input()
     cnt = 1 #초기값 1 = 모두 만족해야한다
@@ -12,5 +11,4 @@ for s in range(1,t+1):
                 cnt += 1
             else:
                 break
-                
     print(f'#{s} {cnt}')
