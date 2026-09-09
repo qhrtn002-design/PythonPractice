@@ -1,29 +1,22 @@
-def comb(idx, total):
-    global cnt
-    if idx == n:
-        if total == k:
-            cnt += 1
-        return
-    if total+lst[idx]<=k:
-        comb(idx+1,total+lst[idx])
-    comb(idx+1,total)
-    
-t = int(input())
-for s in range(t):
-    n,k=map(int,input().split())
-    lst=list(map(int,input().split()))
-    cnt = 0
-    comb(0,0)
-    print(f'#{s+1} {cnt}')
-
-
-t = int(input())
-for s in range(t):
-    n,k=map(int,input().split())
-    lst=list(map(int,input().split()))
-    dp=[0]*(k+1)
-    dp[0]=1
-    for i in lst:
-        for j in range(k,i-1,-1):
-            dp[j] += dp[j-i]
-    print(f'#{s+1} {dp[k]}')
+for s in range(10):
+    n=int(input())
+    text=input()
+    stack=[]
+    ans=1
+    for i in text:
+        if i == '[' or i=='{' or i=='<' or i=='(':
+            stack.append(i)
+        else:
+            if stack[-1] == '(' and i == ')':
+                stack.pop()
+            elif stack[-1] == '[' and i == ']':
+                stack.pop()
+            elif stack[-1] == '<' and i=='>':
+                stack.pop()
+            elif stack[-1] == '{' and i =='}':
+                stack.pop()
+            else:
+                ans = 0
+    if len(stack) != 0:
+        ans = 0
+    print(f'#{s+1} {ans}')
