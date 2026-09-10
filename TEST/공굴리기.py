@@ -4,7 +4,7 @@ dy=[1,0,-1,0]
 for s in range(t):
     n=int(input())
     arr=[list(map(int,input().split()))for _ in range(n)]
-    ans=1
+    ans=0
     for i in range(n):
         for j in range(n):
             x,y=i,j
@@ -24,8 +24,10 @@ for s in range(t):
                     if minh>arr[nx][ny]:
                         minh = arr[nx][ny]
                         ndir = dir
+
                 if ndir == -1:
                     break
+                
                 x=x+dx[ndir]
                 y=y+dy[ndir]
                 step+=1
