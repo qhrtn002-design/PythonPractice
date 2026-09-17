@@ -37,7 +37,7 @@ t= int(input())
 for s in range(t):
     ans = 0
     n, m = map(int, input().split())
-    arr = [list(input())for _ in range(n)]
+    arr = [input()for _ in range(n)]
     bfs()
 
     print(f'#{s+1} {ans}')
