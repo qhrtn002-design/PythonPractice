@@ -1,7 +1,7 @@
 from collections import deque
 
 def bfs():
-    q = deque()
+    q= deque()
     q.append(s)
     visited[s] = 1
 
@@ -15,16 +15,14 @@ def bfs():
 
 t=int(input())
 for tc in range(t):
-    v,e = map(int,input().split())
+    v,e = map(int, input().split())
     graph = [[] for _ in range(v+1)]
     visited = [0]*(v+1)
     dis = [0]*(v+1)
-    ans = 0
     for _ in range(e):
-        a,b = map(int,input().split())
+        a,b = map(int, input().split())
         graph[a].append(b)
         graph[b].append(a)
-    s,g = map(int,input().split())
-
+    s,g = map(int, input().split())
     bfs()
     print(f'#{tc+1} {dis[g]}')

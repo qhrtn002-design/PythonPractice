@@ -1,3 +1,5 @@
+def dfs():
+    
 t=int(input())
 for s in range(t):
     n,m=map(int,input().split())
@@ -7,5 +9,7 @@ for s in range(t):
         x,y = map(int,input().split())
         graph[x].append(y)
         graph[y].append(x)
+    dfs(cnt,)
+
         
     print(f'#{s+1} {ans}')
