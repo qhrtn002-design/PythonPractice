@@ -6,6 +6,7 @@
 # 0이 속한 그룹과 1이 속한 그룹이 하나로 합쳐짐
 
 arr = [i for i in range(6)]
+rank = [0]*6
 
 def union(a,b):
     fa = findboss(a)
@@ -13,7 +14,15 @@ def union(a,b):
     if fa == fb: # 두 보스가 같으면 이미 같은 그룹
         return
 
-    arr[fb] = fa # 보스가 다르면 a의 보스가 통
+    # arr[fb] = fa # 보스가 다르면 a의 보스가 통이 됨
+
+    if rank[a] == rank[b]:
+        rank[a]+=1
+        arr[fb] = fa
+    elif rank[a] > rank[b]:
+        arr[fb] = fa
+    else:
+        arr[fa] = fb
 
 def findboss(member):
     if arr[member] == member: # 자기자신이 보스면 (보스찾음)
