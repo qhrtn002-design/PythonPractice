@@ -11,16 +11,16 @@ def find(x):
 
 t=int(input())
 for tc in range(t):
-    v, e = map(int, input().split()) 
-    edges = []
+    v,e = map(int,input().split())
     group = [i for i in range(v+1)]
+    edge=[]
     ans = 0
     for _ in range(e):
-        a,b,c = map(int, input().split())
-        edges.append((c,a,b))
-    edges.sort()
+        a,b,c = map(int,input().split())
+        edge.append((c,a,b))
+    edge.sort()
 
-    for c,a,b in edges:
+    for c,a,b in edge:
         if find(a) != find(b):
             union(a,b)
             ans +=c
