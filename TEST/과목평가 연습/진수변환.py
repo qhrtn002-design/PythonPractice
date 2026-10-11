@@ -50,6 +50,8 @@ for tc in range(t):
         ans //= 8
     print(f'#{tc+1} {result}')
 
+
+
 t= int(input())
 for tc in range(t):
     a,b,word = input().split()
@@ -65,3 +67,6 @@ for tc in range(t):
         result = digit[ans%b] + result
         ans //= b
     print(f'#{tc+1} {result}')
+
+
+    # result = '0' * (width - len(result)) + result
