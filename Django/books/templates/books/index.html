@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>메인 페이지</h1>
+  <div class="row">
+    {% for book in books %}
+      <div class="col-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <p class="card-text">{{ book.description }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>도서 상세 페이지</h1>
+  <h2>{{ book.title }}</h2>
+  <p>{{ book.description }}</p>
+  <h5>회원 리뷰 평점 : {{ book.customer_review_rank }} / 10</h5>
+  <h5>{{ book.author }}</h5>
+  <hr>
+  <a href="#" class="btn btn-secondary">UPDATE</a>
+  <a href="#" class="btn btn-danger">DELETE</a>
+  <hr>
+  <a href="{% url 'books:index' %}" class="btn btn-primary">BACK</a>
+{% endblock content %}
